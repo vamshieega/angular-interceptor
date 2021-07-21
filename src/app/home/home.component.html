@@ -1,0 +1,65 @@
+<button class="logOut" (click)="logout()">Logout</button>
+<div class="cards">
+    <div class="card">
+        <h6><i class="fa fa-user" aria-hidden="true"></i>
+            Customer Information
+        </h6>
+        <div class="content">
+            <label> Name :</label> {{customerStatus?.customerName}}
+            <br>
+            <label>Phone Number :</label>
+            {{customerStatus?.phoneNo}}
+            <br>
+            <label>Email :</label>
+            {{customerStatus?.emailId}}
+            <br>
+            <label>Address :</label>
+            {{customerStatus?.address.houseNum}} , {{customerStatus?.address.fullAddress}},
+            {{customerStatus?.address.googleLocation}}
+        </div>
+    </div>
+    <div class="card">
+        <h6>
+            <i class="fa fa-store" aria-hidden="true"></i>
+            {{restaurantStatus?.outletName}} ({{restaurantStatus?.locality}})
+        </h6>
+        <div class="content">
+            <label>Phone No :</label>
+            {{restaurantStatus?.mobile2}}
+            <br>
+            <label>Alternative No :</label>
+            {{restaurantStatus?.mobile}}
+            <br>
+            <label>Email :</label>
+            {{restaurantStatus?.email}}
+            <br>
+            <label>Address :</label>
+            {{restaurantStatus?.address.addressLine}} , {{restaurantStatus?.address.apartmentAddress}},
+            {{restaurantStatus?.address.city}},{{restaurantStatus?.address.country}},
+        </div>
+    </div>
+    <div class="card">
+        <table>
+            <tr>
+                <th> Order Date</th>
+                <th class="date"> {{orderDate | date:'M/d/yyyy'}}</th>
+            </tr>
+            <tr>
+                <th>
+                    Order Details
+                </th>
+            </tr>
+            <tr *ngFor="let orderDetails of orderDetails ">
+                <td>
+                    <span class="foodItem"> {{orderDetails?.orderName }}</span>
+                </td>
+                <td>
+                    X{{orderDetails?.quantity }}
+                </td>
+                <td>
+                    {{orderDetails?.value }}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+{
+    "/api/*":{
+        "target":"https://common.laalsa.com/support/support/",
+        "secure": false,
+        "logLevel":"debug"
+    }
+}

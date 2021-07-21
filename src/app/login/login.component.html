@@ -1,0 +1,40 @@
+ 
+ <div class="Login"> 
+  <form  [formGroup]="loginForm" (ngSubmit)="loginform()">
+    <h2>Sign in</h2>
+    <div class="row">
+      <input type="email" name="email" 
+      onkeyup="this.value = this.value.toLowerCase();"
+      formControlName="email" placeholder="Enter Email" required>
+        <!-- remove comments for work -->
+      <!-- <div  *ngIf="authf.email.invalid &&   authf.email.touched" >
+        <span  class="errorClass"  *ngIf="authf.email.errors?.required">
+        Email is required.
+      </span>
+      <span    class="errorClass" *ngIf="authf.email.errors?.pattern">
+        Email Valid Email Id
+      </span>
+    </div> -->
+    </div>
+    <div class="row">
+      <input type="password" name="password" formControlName="password" placeholder="Enter Password" >
+      <!-- <div    *ngIf="authf.password.invalid &&  authf.password.touched" >
+        <span class="errorClass" *ngIf="authf.password.errors?.required">
+       <span>  Password is required. </span>
+      </span>
+      <span    class="errorClass"  *ngIf="authf.password.errors?.minlength">
+         Password must have 6 charcters 
+         </span> 
+    </div> -->
+    </div> 
+    <button type="submit"
+    
+    [ngClass]="{'buttonActivate': loginForm.valid }"
+
+    [disabled]="loginForm.invalid"  
+        >Submit</button>
+    <a href="#" class="forgot">Forgot password?</a>
+  </form>
+ </div> 
+
+ 
